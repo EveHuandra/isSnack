@@ -17,9 +17,9 @@ class cartSeeder extends Seeder
     {
         $cart = new cart;
         $cart->Id_cart=1111;
+        $cart->Qty=1;
         $cart->Id_produk=11111111;
         $cart->Id_user=0101;
-        $cart->Qty=1;
         $cart->save();
     }
 }
