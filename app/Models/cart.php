@@ -9,4 +9,5 @@ class cart extends Model
 {
     use HasFactory;
     protected $fillable = ['Id_cart','Id_produk','Qty','Deskripsi'];
+    public $timestamps = false;
 }
