@@ -29,5 +29,20 @@ class transactionSeeder extends Seeder
             $transaction->Date=Carbon::now();
             $transaction->Address="Jalan Sapi Kuning";
             $transaction->save();
+
+            $transaction = new transaction();
+            $transaction->Id_transaction=112;
+            $transaction->Transaction_number=111111112;
+            $transaction->Total_berat=150;
+            $transaction->Phone="081234568";
+            $transaction->No_resi="SN128018237990";
+            $transaction->Kurir="Adudu";
+            $transaction->Kota="Jakarta";
+            $transaction->Ongkir=12000;
+            $transaction->Total=55000;
+            $transaction->Status="Sedang dalam Pengemasan";
+            $transaction->Date=Carbon::now();
+            $transaction->Address="Jalan Sumatera";
+            $transaction->save();
 }
 }
