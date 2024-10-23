@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('carts', function (Blueprint $table) {
-            $table->id();
-            $table->integer("Id_cart");
+            $table->integer("Id_cart")->autoIncrement();
             $table->integer("Id_produk");
             $table->integer("Qty");
+
+            $table->foreign('Id_produk')->references('Id_produk')->on('produks');
+            $table->foreign('Id_user')->references('Id_user')->on('customers');
         });
     }
 
