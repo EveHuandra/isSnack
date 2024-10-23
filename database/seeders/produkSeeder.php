@@ -21,7 +21,7 @@ class produkSeeder extends Seeder
         $produk->Ukuran=30;
         $produk->Nama="Potato Chups";
         $produk->Deskripsi="Keripik kentang yang tipis dan renyah ini digoreng dengan sempurna untuk menghasilkan tekstur yang gurih. Tersedia dalam berbagai varian rasa seperti original (asin), BBQ, keju, dan balado. Snack ini cocok untuk dinikmati kapan saja sebagai teman ngemil saat santai.";
-        $produk->Expired=2025-01-11;
+        $produk->Expired="2025-01-11";
         $produk->Berat=45;
         $produk->Stock=60;
         $produk->Harga=15000;
@@ -34,7 +34,7 @@ class produkSeeder extends Seeder
         $produk->Ukuran=50;
         $produk->Nama="Snack Jagung";
         $produk->Deskripsi="Snack jagung ini terbuat dari tepung jagung pilihan yang dipanggang dan digoreng hingga renyah. Dilengkapi dengan bumbu gurih seperti keju atau BBQ yang memberikan cita rasa yang lezat dan memanjakan lidah. Cocok sebagai camilan atau teman saus salsa dan guacamole.";
-        $produk->Expired=2025-03-05;
+        $produk->Expired="2025-03-05";
         $produk->Berat=69;
         $produk->Stock=50;
         $produk->Harga=35000;

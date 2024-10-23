@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
             $table->integer("Id_transaction");
             $table->integer("Transaction_number");
             $table->integer("Total_berat");
@@ -23,8 +22,9 @@ return new class extends Migration
             $table->integer("Ongkir");
             $table->integer("Total");
             $table->text("Status");
-            $table->dateTime("Date");
+            $table->date("Date")->useCurrent();
             $table->text("Address");
+            $table->timestamps();
         });
     }
 
