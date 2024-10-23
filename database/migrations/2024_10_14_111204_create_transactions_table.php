@@ -12,19 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->integer("Id_transaction");
-            $table->integer("Transaction_number");
-            $table->integer("Total_berat");
-            $table->text("Phone");
+            $table->integer("Id_transaction")->autoIncrement();
+            $table->integer("Id_produk");
+            $table->integer("Quantity");
             $table->text("No_resi");
-            $table->text("Kurir");
-            $table->text("Kota");
-            $table->integer("Ongkir");
-            $table->integer("Total");
-            $table->text("Status");
-            $table->date("Date")->useCurrent();
-            $table->text("Address");
+            $table->integer("Harga");
+            $table->dateTime("Date");
             $table->timestamps();
+
+            $table->foreign('Id_produk')->references('Id_produk')->on('produks');
         });
     }
 

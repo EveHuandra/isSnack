@@ -17,32 +17,47 @@ class transactionSeeder extends Seeder
     {
             $transaction = new transaction();
             $transaction->Id_transaction=111;
-            $transaction->Transaction_number=111111111;
-            $transaction->Total_berat=100;
-            $transaction->Phone="0813456789";
+            $transaction->Id_produk=11111111;
+            $transaction->Quantity=3;
             $transaction->No_resi="SN12819573920348";
-            $transaction->Kurir="Cindy";
-            $transaction->Kota="Medan";
-            $transaction->Ongkir=8000;
-            $transaction->Total=50000;
-            $transaction->Status="Dikirim ke kota tujuan";
-            $transaction->Date=Carbon::now();
-            $transaction->Address="Jalan Sapi Kuning";
+            $transaction->Harga=45000;
+            $transaction->Date = '2024-09-10';
             $transaction->save();
 
             $transaction = new transaction();
             $transaction->Id_transaction=112;
-            $transaction->Transaction_number=111111112;
-            $transaction->Total_berat=150;
-            $transaction->Phone="081234568";
+            $transaction->Id_produk=11111112;
+            $transaction->Quantity=5;
             $transaction->No_resi="SN128018237990";
-            $transaction->Kurir="Adudu";
-            $transaction->Kota="Jakarta";
-            $transaction->Ongkir=12000;
-            $transaction->Total=55000;
-            $transaction->Status="Sedang dalam Pengemasan";
-            $transaction->Date=Carbon::now();
-            $transaction->Address="Jalan Sumatera";
+            $transaction->Harga=175000;
+            $transaction->Date="2024-09-10";
+            $transaction->save();
+
+            $transaction = new transaction();
+            $transaction->Id_transaction=113;
+            $transaction->Id_produk=11111113;
+            $transaction->Quantity=2;
+            $transaction->No_resi="SN154876646312";
+            $transaction->Harga=40000;
+            $transaction->Date="2024-09-22";
+            $transaction->save();
+
+            $transaction = new transaction();
+            $transaction->Id_transaction=114;
+            $transaction->Id_produk=11111114;
+            $transaction->Quantity=8;
+            $transaction->No_resi="'SN1478523965";
+            $transaction->Harga=280000;
+            $transaction->Date="2024-09-25";
+            $transaction->save();
+
+            $transaction = new transaction();
+            $transaction->Id_transaction=115;
+            $transaction->Id_produk=11111115;
+            $transaction->Quantity=7;
+            $transaction->No_resi="'SN1452369874";
+            $transaction->Harga=175000;
+            $transaction->Date="2024-09-30";
             $transaction->save();
 }
 }
