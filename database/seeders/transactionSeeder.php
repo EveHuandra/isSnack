@@ -48,7 +48,7 @@ class transactionSeeder extends Seeder
             $transaction->Quantity=8;
             $transaction->No_resi="'SN1478523965";
             $transaction->Harga=280000;
-            $transaction->Date="2024-09-25";
+            $transaction->Date="2024-09-22";
             $transaction->save();
 
             $transaction = new transaction();
@@ -57,7 +57,7 @@ class transactionSeeder extends Seeder
             $transaction->Quantity=7;
             $transaction->No_resi="'SN1452369874";
             $transaction->Harga=175000;
-            $transaction->Date="2024-09-30";
+            $transaction->Date="2024-09-22";
             $transaction->save();
 }
 }
