@@ -14,50 +14,50 @@ class transactionSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-            $transaction = new transaction();
-            $transaction->Id_transaction=111;
-            $transaction->Id_produk=11111111;
-            $transaction->Quantity=3;
-            $transaction->No_resi="SN12819573920348";
-            $transaction->Harga=45000;
-            $transaction->Date = '2024-09-10';
-            $transaction->save();
-
-            $transaction = new transaction();
-            $transaction->Id_transaction=112;
-            $transaction->Id_produk=11111112;
-            $transaction->Quantity=5;
-            $transaction->No_resi="SN128018237990";
-            $transaction->Harga=175000;
-            $transaction->Date="2024-09-10";
-            $transaction->save();
-
-            $transaction = new transaction();
-            $transaction->Id_transaction=113;
-            $transaction->Id_produk=11111113;
-            $transaction->Quantity=2;
-            $transaction->No_resi="SN154876646312";
-            $transaction->Harga=40000;
-            $transaction->Date="2024-09-22";
-            $transaction->save();
-
-            $transaction = new transaction();
-            $transaction->Id_transaction=114;
-            $transaction->Id_produk=11111114;
-            $transaction->Quantity=8;
-            $transaction->No_resi="'SN1478523965";
-            $transaction->Harga=280000;
-            $transaction->Date="2024-09-22";
-            $transaction->save();
-
-            $transaction = new transaction();
-            $transaction->Id_transaction=115;
-            $transaction->Id_produk=11111115;
-            $transaction->Quantity=7;
-            $transaction->No_resi="'SN1452369874";
-            $transaction->Harga=175000;
-            $transaction->Date="2024-09-22";
-            $transaction->save();
-}
+    {   
+        for($i = 1; $i <= 20; $i++) {
+            DB::table('transactions')->insert([
+                [
+                'Id_transaction' => 111,
+                'Id_produk' => 11111111,
+                'Quantity' => 3,
+                'No_resi' => "SN12819573920348",
+                'Harga' => 4500,
+                'Date' => '2024-09-10',
+                ],
+                [
+                    'Id_transaction' => 112,
+                    'Id_produk' => 11111112,
+                    'Quantity' => 5,
+                    'No_resi' => "SN128018237990",
+                    'Harga' => 175000,
+                    'Date' => '2024-09-10',
+                ],
+                [
+                    'Id_transaction' => 113,
+                    'Id_produk' => 11111113,
+                    'Quantity' => 2,
+                    'No_resi' => "SN154876646312",
+                    'Harga' => 40000,
+                    'Date' => '2024-09-22',
+                ],
+                [
+                    'Id_transaction' => 114,
+                    'Id_produk' => 11111114,
+                    'Quantity' => 8,
+                    'No_resi' => "SN1478523965",
+                    'Harga' => 280000,
+                    'Date' => '2024-09-22',
+                ],
+                [
+                    'Id_transaction' => 115,
+                    'Id_produk' => 11111115,
+                    'Quantity' => 7,
+                    'No_resi' => "SN1452369874",
+                    'Harga' => 175000,
+                    'Date' => '2024-09-22',
+                ]
+            ]);
+        }
+    }
 }

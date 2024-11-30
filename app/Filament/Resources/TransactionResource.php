@@ -27,43 +27,24 @@ class TransactionResource extends Resource
                 ->label('Id Transaction')
                 ->required()
                 ->numeric(),
-                Forms\Components\TextInput::make('Transaction_number')
-                ->label('Transaction Number')
+                Forms\Components\TextInput::make('Id_produk')
+                ->label('Id Produk')
                 ->required()
                 ->numeric(),
-                Forms\Components\TextInput::make('Total_berat')
-                ->label('Total Berat')
+                Forms\Components\TextInput::make('Quantity')
+                ->label('Quantity')
                 ->required()
                 ->numeric(),
-                Forms\Components\TextInput::make('Phone')
-                ->label('Phone')
-                ->required(),
                 Forms\Components\TextInput::make('No_resi')
                 ->label('No, Resi')
                 ->required(),
-                Forms\Components\TextInput::make('Kurir')
-                ->label('Kurir')
-                ->required(),
-                Forms\Components\TextInput::make('Kota')
-                ->label('Kota')
-                ->required(),
-                Forms\Components\TextInput::make('Ongkir')
-                ->label('Ongkir')
+                Forms\Components\TextInput::make('Harga')
+                ->label('Harga')
                 ->required()
                 ->numeric(),
-                Forms\Components\TextInput::make('Total')
-                ->label('Total')
-                ->required()
-                ->numeric(),
-                Forms\Components\TextInput::make('Status')
-                ->label('Status')
-                ->required(),
                 Forms\Components\DateTimePicker::make('Date')
                 ->label('Date')
                 ->required(),
-                Forms\Components\TextInput::make('Address')
-                ->label('Address')
-                ->required()
             ]);
     }
 
@@ -72,17 +53,11 @@ class TransactionResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('Id_transaction')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Transaction_number')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Total_berat')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Phone')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Id_produk')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Quantity')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('No_resi')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Kurir')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Kota')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Ongkir')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Total')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Status')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Harga')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Date')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Address')->sortable()->searchable(),
             ])
             ->filters([
                 //

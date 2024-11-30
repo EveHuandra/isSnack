@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->integer("Id_user")->autoIncrement();
+            $table->id();
+            $table->integer("Id_customer")->unique();
             $table->text("Username");
             $table->text("Password");
         });

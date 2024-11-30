@@ -19,14 +19,14 @@ class cartSeeder extends Seeder
         $cart->Id_cart=1111;
         $cart->Qty=1;
         $cart->Id_produk=11111111;
-        $cart->Id_user=101;
+        $cart->Id_customer='0101';
         $cart->save();
 
         $cart = new cart;
         $cart->Id_cart=1112;
         $cart->Qty=3;
         $cart->Id_produk=11111112;
-        $cart->Id_user=102;
+        $cart->Id_customer='0102';
         $cart->save();
     }
 }

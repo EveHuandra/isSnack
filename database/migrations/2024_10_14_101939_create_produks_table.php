@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('produks', function (Blueprint $table) {
-            $table->integer("Id_produk")->autoIncrement();
+            $table->id();
+            $table->integer("Id_produk")->unique();
             $table->text("Kategori");
             $table->text("Isi");
             $table->integer("Ukuran");

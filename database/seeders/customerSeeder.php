@@ -17,7 +17,7 @@ class customerSeeder extends Seeder
     $faker = Faker::create('id_ID');
     for($i = 1; $i <= 20; $i++) {
         DB::table('customers')->insert([
-            'Id_user' => '010'. $i,
+            'Id_customer' => '010'. $i,
             'Username' => $faker->name,
             'Password' => $faker->password(),
         ]);
