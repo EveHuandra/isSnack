@@ -15,6 +15,6 @@ public function customer()
 
     use HasFactory;
 
-    protected $fillable = ['Id_cart','Id_produk','Qty','Deskripsi'];
+    protected $fillable = ['Id_cart','Id_produk','Qty','Id_customer'];
     public $timestamps = false;
 }

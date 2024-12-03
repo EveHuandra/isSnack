@@ -4,8 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\CartResource\Pages;
 use App\Filament\Resources\CartResource\RelationManagers;
-use App\Models\Cart;
-use App\Imports\CartImport;
+use App\Models\cart;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,12 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Filament\Tables\Actions\Action;
-use Maatwebsite\Excel\Facades\Excel;
-use Filament\Forms\Components\FileUpload;
-use Illuminate\Support\Facades\Storage;
-use Filament\Notifications\Notification;
-
 
 class CartResource extends Resource
 {
@@ -36,15 +29,13 @@ class CartResource extends Resource
                 ->numeric(),
                 Forms\Components\TextInput::make('Id_produk')
                 ->label('Id Produk')
-                ->required()
-                ->numeric(),
+                ->required(),
                 Forms\Components\TextInput::make('Qty')
-                ->label('Quantity')
-                ->required()
-                ->numeric(),
-                Forms\Components\TextInput::make('Deskripsi')
-                ->label('Deskripsi')
-                ->required()
+                ->label('Kuantitas')
+                ->required(),
+                Forms\Components\TextInput::make('Id_customer')
+                ->label('Id Customer')
+                ->required(),
             ]);
     }
 
@@ -55,40 +46,13 @@ class CartResource extends Resource
                 Tables\Columns\TextColumn::make('Id_cart')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Id_produk')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Qty')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('Deskripsi')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Id_customer')->sortable()->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-            ])
-            ->headerActions([
-                Action::make('importExcel')
-                    ->label('Import Excel')
-                    ->action(function (array $data) {
-                    // Pastikan $data['file'] adalah jalur yang valid di storage
-                    $filePath = storage_path('app/public/' . $data['file']);
-           
-                    // Import file menggunakan jalur absolut
-                    Excel::import(new CartImport, $filePath);
-                    // Tampilkan notifikasi sukses
-                    Notification::make()
-                        ->title('Data berhasil diimpor!')
-                        ->success()
-                        ->send();
-            })
-           ->form([
-            FileUpload::make('file')
-                ->label('Pilih File Excel')
-                ->disk('public') // Pastikan disimpan di disk 'public'
-                ->directory('imports')
-                ->acceptedFileTypes(['application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'])
-                ->required(),
-                ])
-                ->modalHeading('Import Data Mahasiswa')
-                ->modalButton('Import')
-                ->color('success'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

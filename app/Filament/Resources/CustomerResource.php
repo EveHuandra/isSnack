@@ -23,8 +23,8 @@ class CustomerResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('Id_user')
-                ->label('Id User')
+                Forms\Components\TextInput::make('Id_customer')
+                ->label('Id Customer')
                 ->required()
                 ->numeric(),
                 Forms\Components\TextInput::make('Username')
@@ -40,7 +40,7 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('Id_user')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Id_customer')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Username')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Password')->sortable()->searchable(),
             ])
