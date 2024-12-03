@@ -23,6 +23,7 @@ class transactionSeeder extends Seeder
                 'No_resi' => "SN12819573920348",
                 'Harga' => 4500,
                 'Date' => '2024-09-10',
+                'Id_customer' => '0101',
                 ],
                 [
                     'Id_transaction' => 112,
@@ -31,6 +32,7 @@ class transactionSeeder extends Seeder
                     'No_resi' => "SN128018237990",
                     'Harga' => 175000,
                     'Date' => '2024-09-10',
+                    'Id_customer' => '0102',
                 ],
                 [
                     'Id_transaction' => 113,
@@ -39,6 +41,7 @@ class transactionSeeder extends Seeder
                     'No_resi' => "SN154876646312",
                     'Harga' => 40000,
                     'Date' => '2024-09-22',
+                    'Id_customer' => '0103',
                 ],
                 [
                     'Id_transaction' => 114,
@@ -47,6 +50,7 @@ class transactionSeeder extends Seeder
                     'No_resi' => "SN1478523965",
                     'Harga' => 280000,
                     'Date' => '2024-09-22',
+                    'Id_customer' => '0104',
                 ],
                 [
                     'Id_transaction' => 115,
@@ -55,6 +59,7 @@ class transactionSeeder extends Seeder
                     'No_resi' => "SN1452369874",
                     'Harga' => 175000,
                     'Date' => '2024-09-22',
+                    'Id_customer' => '0105',
                 ]
             ]);
         }

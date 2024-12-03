@@ -51,11 +51,13 @@ class ListTransactions extends ListRecords
             SELECT 
                 t.No_resi AS no_resi_pesanan,
                 p.Nama AS nama_produk,
-                crt.Qty AS kuantitas,
+                c.Username AS username,
                 t.Harga AS total_harga_produk
             FROM transactions t
-            JOIN carts crt ON t.Id_produk = crt.Id_produk
-            JOIN produks p ON crt.Id_produk = p.Id_produk
+            JOIN customers c ON t.Id_customer = c.Id_customer
+            JOIN produks p ON t.Id_produk = p.Id_produk;
+
+
         ');
 
         // Load view untuk cetak PDF

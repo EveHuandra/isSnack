@@ -56,7 +56,7 @@
 </head>
 <body>
  <div class="header-info">
-    <h2>Laporan fINAL</h2>
+    <h2>Laporan Final</h2>
     <h2>PT. Snack</h2>
     <p><strong>Laporan Data Final</strong></p>
     <p>Periode: 2023-2024</p>
@@ -67,18 +67,18 @@
  <thead>
  <tr>
  </tr>
-    <th>No. Resi Pesanan</th>   
+    <th>Username</th>
     <th>Nama Produk</th>
-    <th>Kuantitas Pesanan</th>
+    <th>No. Resi Pesanan</th>   
     <th>Total Harga Produk</th>
  </thead>
  <tbody>
 
     @foreach($data as $rows)
     <tr>
-        <td>{{ $rows->no_resi_pesanan }}</td>
+        <td>{{ $rows->username }}</td>
         <td>{{ $rows->nama_produk }}</td>
-        <td>{{ $rows->kuantitas }}</td>
+        <td>{{ $rows->no_resi_pesanan }}</td>
         <td>{{ $rows->total_harga_produk }}</td>
     </tr>
  @endforeach

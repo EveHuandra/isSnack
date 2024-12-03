@@ -19,9 +19,11 @@ return new class extends Migration
             $table->text("No_resi");
             $table->integer("Harga");
             $table->dateTime("Date");
+            $table->integer('Id_customer');
             $table->timestamps();
 
             $table->foreign('Id_produk')->references('Id_produk')->on('produks');
+            $table->foreign('Id_customer')->references('Id_customer')->on('customers');
         });
     }
 

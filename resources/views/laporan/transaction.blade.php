@@ -3,7 +3,7 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Laporan Cart</title>
+ <title>Laporan transaction</title>
  <style>
  body { 
         font-family: Arial, sans-serif; 
@@ -77,12 +77,13 @@
  <tbody>
     @foreach($data as $cart)
     <tr>
-       <td>{{ $cart->Id_transaction }}</td>
-        <td>{{ $cart->Id_produk }}</td>
-        <td>{{ $cart->Quantity }}</td>
-        <td>{{ $cart->No_resi }}</td>
-        <td>{{ $cart->Harga }}</td>
-        <td>{{ $cart->Date }}</td>
+       <td>{{ $transaction->Id_transaction }}</td>
+        <td>{{ $transaction->Id_produk }}</td>
+        <td>{{ $transaction->Quantity }}</td>
+        <td>{{ $transaction->No_resi }}</td>
+        <td>{{ $transaction->Harga }}</td>
+        <td>{{ $transaction->Date }}</td>
+        <td>{{ $transaction->Id_customer }}</td>
     </tr>
  @endforeach
  </tbody>

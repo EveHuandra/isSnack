@@ -45,6 +45,9 @@ class TransactionResource extends Resource
                 Forms\Components\DateTimePicker::make('Date')
                 ->label('Date')
                 ->required(),
+                Forms\Components\TextInput::make('Id_customer')
+                ->label('Id Customer')
+                ->required(),
             ]);
     }
 
@@ -58,6 +61,7 @@ class TransactionResource extends Resource
                 Tables\Columns\TextColumn::make('No_resi')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Harga')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('Date')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('Id_customer')->sortable()->searchable(),
             ])
             ->filters([
                 //
