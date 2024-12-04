@@ -3,7 +3,6 @@
 namespace App\Filament\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
-use Filament\Widgets\StatsOverviewWidget\Stat;
 use Filament\Widgets\StatsOverviewWidget\Card;
 use Illuminate\Support\Facades\DB;
 
@@ -11,12 +10,24 @@ class TanggalProdukStat extends BaseWidget
 {
     protected function getStats(): array
     {
-        //Query untuk menghitung kategori produk
-        $tanggalProduk = DB::table ('produks')->count();
+        // Menghitung total produk terjual (berdasarkan transaksi)
+        $totalTerjual = DB::table('transactions')->count();
+
+        // Menghitung total penjualan pada hari ini
+        $penjualanHariIni = DB::table('transactions')
+            ->whereDate('Date', now()->toDateString())
+            ->count();
+
         return [
-            Card::make('Tanggal Produk Stat', $tanggalProduk)
-            ->description('Statistik Produk yang dijual per hari dengan harga')
-            ->descriptionIcon('heroicon-s-academic-cap')->color('success'),
+            Card::make('Total Produk Terjual', $totalTerjual)
+                ->description('Total produk terjual berdasarkan data transaksi')
+                ->descriptionIcon('heroicon-s-chart-bar')
+                ->color('success'),
+
+            Card::make('Penjualan Hari Ini', $penjualanHariIni)
+                ->description('Jumlah produk terjual hari ini')
+                ->descriptionIcon('heroicon-s-calendar')
+                ->color('primary'),
         ];
     }
 }

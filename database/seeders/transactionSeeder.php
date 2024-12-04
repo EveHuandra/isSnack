@@ -21,7 +21,7 @@ class transactionSeeder extends Seeder
                 'Id_produk' => 11111111,
                 'Quantity' => 3,
                 'No_resi' => "SN12819573920348",
-                'Harga' => 4500,
+                'Harga' => 45000,
                 'Date' => '2024-09-10',
                 'Id_customer' => '0101',
                 ],
